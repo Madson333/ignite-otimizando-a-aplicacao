@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { MovieCard } from "./MovieCard";
 
 interface ContentProps {
@@ -20,6 +21,8 @@ interface ContentProps {
 }
 
 export function Content({ selectedGenre, movies }: ContentProps) {
+  const genereTitle = useMemo(() => selectedGenre.title, [selectedGenre])
+
   return (
     <div className="container">
       <header>
